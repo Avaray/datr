@@ -1,7 +1,7 @@
 {
   "name": "datr",
-  "version": "1.0.2",
-  "description": "Gives you date in uncommon format",
+  "version": "1.0.3",
+  "description": "Gives you date in uncommon format (ex. 20181230183500)",
   "main": "app.js",
   "keywords": ["date", "format", "formatting", "time", "useful", "uncommon"],
   "author": "Avaray",
