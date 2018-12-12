@@ -1,9 +1,10 @@
 {
   "name": "datr",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Gives you date in uncommon format",
   "main": "app.js",
   "keywords": ["date", "format", "formatting", "time", "useful", "uncommon"],
   "author": "Avaray",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/Avaray/datr"
 }
