@@ -1,7 +1,7 @@
 module.exports = function(format) {
     var date = new Date()
-    var a = date.toLocaleDateString().replace(/-/g, '')
-    var b = date.toLocaleTimeString().replace(/:/g, '')
+    var a = date.toLocaleDateString().replace(/[^0-9.]/g, '')
+    var b = date.toLocaleTimeString().replace(/[^0-9.]/g, '')
 
     switch (format) {
         case 1:
