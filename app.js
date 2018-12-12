@@ -1,20 +1,21 @@
 module.exports = function(format) {
 
-    function add_zero(n) {
-        return (n < 10 ? '0' : '') + n;
+    function z(n) {
+        return n.toString().padStart(2, '0')
     }
 
     var date = new Date()
 
-    var a = [date.getFullYear()] + [add_zero(date.getMonth() +1)] + [add_zero(date.getDate())]
-    var b = [add_zero(date.getHours())] + [add_zero(date.getMinutes())] + [add_zero(date.getSeconds())]
+    var a = date.getFullYear() + z(date.getMonth() +1) +z(date.getDate())
+    var b = z(date.getHours()) + z(date.getMinutes()) + z(date.getSeconds())
+    var c = date.getMilliseconds().toString().padStart(3, '0')
 
     switch (format) {
         case 1:
             return a + '.' + b
         case 2:
-            return a
+            return a + '.' + b + '.' + c
         default:
-            return a + b
+            return a
     }
 }

@@ -1,10 +1,12 @@
 {
   "name": "datr",
-  "version": "1.0.9",
-  "description": "Gives you date in uncommon format (YYYYMMDDHHMMSS)",
+  "version": "1.0.10",
+  "description": "Gives you date in uncommon format (YYYYMMDD.HHMMSS.MS)",
+  "author": "Avaray",
   "main": "app.js",
   "keywords": ["date", "format", "formatting", "time", "useful", "uncommon"],
-  "author": "Avaray",
+  "homepage": "https://github.com/Avaray/datr",
   "license": "MIT",
-  "homepage": "https://github.com/Avaray/datr"
+  "engines" : { "node" : ">=8.2.1" },
+  "engineStrict" : true
 }
