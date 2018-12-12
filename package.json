@@ -1,6 +1,6 @@
 {
   "name": "datr",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Gives you date in uncommon format (YYYYMMDDHHMMSS)",
   "main": "app.js",
   "keywords": ["date", "format", "formatting", "time", "useful", "uncommon"],

@@ -6,8 +6,8 @@ module.exports = function(format) {
 
     var date = new Date()
 
-    var a = date.getFullYear() + add_zero(date.getMonth()) + add_zero(date.getDay())
-    var b = add_zero(date.getHours()) + add_zero(date.getMinutes()) + add_zero(date.getSeconds())
+    var a = [date.getFullYear()] + [add_zero(date.getMonth())] + [add_zero(date.getDate())]
+    var b = [add_zero(date.getHours())] + [add_zero(date.getMinutes())] + [add_zero(date.getSeconds())]
 
     switch (format) {
         case 1:
