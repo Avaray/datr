@@ -4,6 +4,9 @@
   "description": "Gives you current date in uncommon format",
   "author": "Avaray",
   "main": "module.js",
+  "bin": {
+    "datr": "cli.js"
+  },
   "keywords": [
     "date",
     "time",
