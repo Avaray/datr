@@ -1,6 +1,6 @@
 # 🕘 DATR
 
-### **Date** is just a **number**. It's all about increasing that **number**.  
+**Date** is just a **number**. It's all about increasing that **number**.  
 
 You might find this package useful in console logging, naming files, generating ID's, etc.
 
