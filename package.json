@@ -7,7 +7,6 @@
   "bin": {
     "datr": "cli.js"
   },
-  "type": "module",
   "keywords": [
     "date",
     "time",
