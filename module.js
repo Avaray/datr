@@ -1,4 +1,4 @@
-export default function(precision, separator='.') {
+export default function(precision, separator='') {
 
     function z(n) { return n.toString().padStart(2, '0') }
 
