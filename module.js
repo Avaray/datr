@@ -1,4 +1,4 @@
-module.exports = function(precision, separator='') {
+export default function(precision, separator='.') {
 
     function z(n) { return n.toString().padStart(2, '0') }
 
@@ -8,7 +8,7 @@ module.exports = function(precision, separator='') {
     var b = z(date.getHours()) + z(date.getMinutes()) + z(date.getSeconds())
     var c = date.getMilliseconds().toString().padStart(3, '0')
 
-    switch (Number(precision)) {
+    switch (parseInt(precision)) {
         case 1:
             return [a,b].join(separator)
         case 2:
