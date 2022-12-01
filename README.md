@@ -32,10 +32,10 @@ console.log(datr(1))
 console.log(datr(2))  
 // 20221230183500001
 
-console.log(datr(2), '.')  
+console.log(datr(2, '.'))  
 // 20221230.183500.001
 
-console.log(datr(2), '-')  
+console.log(datr(2, '-'))  
 // 20221230-183500-001
 ````
 
