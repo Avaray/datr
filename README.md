@@ -1,7 +1,8 @@
 # 🕘 DATR
 
-**Date** is a **number**. It's all about increasing that **number**.  
-You might find this package useful in console logging, naming files, generating ID's for your users, etc.
+### **Date** is just a **number**. It's all about increasing that **number**.  
+
+You might find this package useful in console logging, naming files, generating ID's, etc.
 
 ## First argument is `precision`
 0 - Year, Month, Day  
