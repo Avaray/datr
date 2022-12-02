@@ -4,7 +4,7 @@
 
 You might find this package useful in console logging, naming files, generating ID's, etc.
 
-## First argument is `precision`
+## First, optional argument is `precision`
 0 - Year, Month, Day  
 1 - Year, Month, Day, Hour, Minute, Second  
 2 - Year, Month, Day, Hour, Minute, Second, Millisecond  
