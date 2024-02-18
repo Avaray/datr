@@ -35,7 +35,7 @@ pnpm add datr
 ## [Module](https://nodejs.org/api/esm.html#introduction) Usage
 
 ```js
-const datr = require('datr');
+import datr from 'datr';
 
 console.log(typeof datr());
 // string

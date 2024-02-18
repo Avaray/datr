@@ -1,6 +1,6 @@
 {
   "name": "datr",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Gives you current date in uncommon format",
   "author": "Avaray",
   "main": "module.js",
