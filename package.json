@@ -1,11 +1,11 @@
 {
   "name": "datr",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Gives you current date in uncommon format",
   "author": "Avaray",
-  "main": "module.js",
+  "main": "module.mjs",
   "bin": {
-    "datr": "cli.js"
+    "datr": "cli.mjs"
   },
   "keywords": [
     "date",
