@@ -1,11 +1,12 @@
 # 🕘 DATR
 
-**Date** is just a **number**. It's all about increasing that **number**.
+This package will help you generate a date in a programmer-friendly format.  
+It might be useful for console logging, generating IDs, naming files, etc.
+
+So, let's treat the **Date** as a **number**. It's all about increasing that **number**.
 
 To make this method work, we need to follow [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg) date format.  
 We start with the year, followed by the month and day.
-
-You might find this package useful in console logging, naming files, generating ID's, etc.
 
 ### First, optional argument is `precision`
 
