@@ -3,12 +3,18 @@
 This package will help you generate a date in a programmer-friendly format.  
 It might be useful for console logging, generating IDs, naming files, etc.
 
-So, let's treat the **Date** as a **number**. It's all about increasing that **number**.
+## The Idea
 
-To make this method work, we need to follow [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg) date format.  
-We start with the year, followed by the month and day.
+Let's treat the **Date** as a **number**. It's all about increasing that **number**.  
+[Unix time](https://en.wikipedia.org/wiki/Unix_time) does that, but it's not human-readable, and it doesn't include milliseconds.  
+To avoid these problems, Let's start with [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg) date format and include the time, with milliseconds (in a three-digit format) as the smallest unit. The end result is the format **YYYYMMDDHHMMSSms**.  
+I assume there are many users of such a format. However, the format itself has never been standardized, from what I know.
+
+## DATR takes two arguments
 
 ### First, optional argument is `precision`
+
+Precision adds additional **blocks** to the format.
 
 0 - Year, Month, Day (default)  
 1 - Year, Month, Day, Hour, Minute, Second  
@@ -16,7 +22,7 @@ We start with the year, followed by the month and day.
 
 ### Second, optional argument is `separator`
 
-You can pass string separator to split Day, Hour and Milliseconds.  
+You can pass string separator to separate **blocks**.  
 In examples below I'm using dots and hyphens.
 
 ## Requirements
