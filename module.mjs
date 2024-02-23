@@ -5,15 +5,15 @@ export default function (precision = 0, separator = '') {
 
   const date = new Date();
 
-  const a = date.getFullYear() + z(date.getMonth() + 1) + z(date.getDate());
-  const b = z(date.getHours()) + z(date.getMinutes()) + z(date.getSeconds());
-  const c = date.getMilliseconds().toString().padStart(3, '0');
+  const a = `${date.getFullYear()}${z(date.getMonth() + 1)}${z(date.getDate())}`;
+  const b = `${z(date.getHours())}${z(date.getMinutes())}${z(date.getSeconds())}`;
+  const c = z(date.getMilliseconds()).padStart(3, '0');
 
   switch (parseInt(precision)) {
     case 1:
-      return [a, b].join(separator);
+      return `${a}${separator}${b}`;
     case 2:
-      return [a, b, c].join(separator);
+      return `${a}${separator}${b}${separator}${c}`;
     default:
       return a;
   }
