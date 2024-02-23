@@ -27,13 +27,13 @@ In examples below you can see dots and hyphens.
 
 ## [Module](https://nodejs.org/api/esm.html#introduction) Installation
 
-By using [NPM](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry)
+By using [NPM](https://docs.npmjs.com/cli-documentation/install)
 
 ```bash
 npm i datr
 ```
 
-By using [PNPM](https://pnpm.io/pnpm-cli)
+By using [PNPM](https://pnpm.io/cli/add)
 
 ```bash
 pnpm add datr
@@ -71,19 +71,19 @@ console.log(datr(2, '-'));
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) installation
 
-By using [NPM](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry)
+By using [NPM](https://docs.npmjs.com/cli/v10/commands/npm-install#global)
 
 ```bash
 npm i -g datr
 ```
 
-By using [PNPM](https://pnpm.io/pnpm-cli)
+By using [PNPM](https://pnpm.io/cli/add#--global--g)
 
 ```bash
 pnpm add -g datr
 ```
 
-By using [BUN](https://bun.sh/docs/cli/add)
+By using [BUN](https://bun.sh/docs/cli/add#global)
 
 ```bash
 bun add -g datr
@@ -110,19 +110,19 @@ datr 2 -
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
 
-By using [NPM](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry)
+By using [NPM](hhttps://docs.npmjs.com/cli/v10/commands/npx)
 
 ```bash
 npx datr
 ```
 
-By using [PNPM](https://pnpm.io/pnpm-cli)
+By using [PNPM](https://pnpm.io/cli/dlx)
 
 ```bash
 pnpm dlx datr
 ```
 
-By using [BUN](https://bun.sh/docs/cli/add)
+By using [BUN](https://bun.sh/docs/cli/bunx)
 
 ```bash
 bunx datr
