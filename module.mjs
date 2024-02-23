@@ -5,16 +5,24 @@ export default function (precision = 0, separator = '') {
 
   const date = new Date();
 
-  const a = `${date.getFullYear()}${z(date.getMonth() + 1)}${z(date.getDate())}`;
-  const b = `${z(date.getHours())}${z(date.getMinutes())}${z(date.getSeconds())}`;
-  const c = z(date.getMilliseconds()).padStart(3, '0');
+  const [year, month, day, hours, minutes, seconds, milliseconds] = [
+    date.getFullYear(),
+    date.getMonth() + 1,
+    date.getDate(),
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds(),
+    date.getMilliseconds(),
+  ];
 
   switch (parseInt(precision)) {
     case 1:
-      return `${a}${separator}${b}`;
+      return `${year}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}`;
     case 2:
-      return `${a}${separator}${b}${separator}${c}`;
+      return `${year}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}${separator}${z(
+        milliseconds,
+      ).padStart(3, '0')}`;
     default:
-      return a;
+      return `${year}${z(month)}${z(day)}`;
   }
 }
