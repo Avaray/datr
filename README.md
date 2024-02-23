@@ -7,7 +7,7 @@ It might be useful for console logging, generating IDs, naming files, etc.
 
 Let's treat the **Date** as a **number**. It's all about increasing that **number**.  
 [Unix time](https://en.wikipedia.org/wiki/Unix_time) does that, but it's not human-readable, and it doesn't include milliseconds.  
-To avoid these problems, Let's start with [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg) date format and include the time, with milliseconds as the smallest unit. The end result is the format **YYYYMMDDHHMMSSms**.  
+To avoid these problems, let's start with [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg) date format and include the time, with milliseconds as the smallest unit. The end result is the format **YYYYMMDDHHMMSSms**.  
 There are many users of such a format. However, the format itself has never been standardized.
 
 ## DATR takes two arguments
@@ -106,4 +106,24 @@ datr 2 .
 
 datr 2 -
 # 20221230-183500-001
+```
+
+## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
+
+By using [NPM](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry)
+
+```bash
+npx datr
+```
+
+By using [PNPM](https://pnpm.io/pnpm-cli)
+
+```bash
+pnpm dlx datr
+```
+
+By using [BUN](https://bun.sh/docs/cli/add)
+
+```bash
+bunx datr
 ```
