@@ -110,7 +110,7 @@ datr 2 -
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
 
-By using [NPM](hhttps://docs.npmjs.com/cli/v10/commands/npx)
+By using [NPM](https://docs.npmjs.com/cli/v10/commands/npx)
 
 ```bash
 npx datr
