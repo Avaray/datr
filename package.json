@@ -1,7 +1,7 @@
 {
   "name": "datr",
   "version": "3.0.5",
-  "description": "Gives you current date in uncommon format",
+  "description": "Generates a date in a programmer-friendly format",
   "author": "Avaray",
   "main": "module.mjs",
   "bin": {
