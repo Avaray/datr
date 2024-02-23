@@ -15,7 +15,7 @@ Many people use such a format. However, it has never been standardized.
 
 ### First, optional argument is `precision`
 
-Precision adds additional **blocks** to the format.
+The argument sets the precision we want to see in output.
 
 `0` - Year, Month, Day (default)  
 `1` - Year, Month, Day, Hour, Minute, Second  
