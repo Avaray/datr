@@ -16,9 +16,9 @@ There are many users of such a format. However, the format itself has never been
 
 Precision adds additional **blocks** to the format.
 
-0 - Year, Month, Day (default)  
-1 - Year, Month, Day, Hour, Minute, Second  
-2 - Year, Month, Day, Hour, Minute, Second, Millisecond
+`0` - Year, Month, Day (default)  
+`1` - Year, Month, Day, Hour, Minute, Second  
+`2` - Year, Month, Day, Hour, Minute, Second, Millisecond
 
 ### Second, optional argument is `separator`
 
