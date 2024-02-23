@@ -22,7 +22,7 @@ Precision adds additional **blocks** to the format.
 
 ### Second, optional argument is `separator`
 
-You can pass string separator to separate **blocks**.  
+You can pass string separator to separate **blocks** and make the date more readable.  
 In examples below I'm using dots and hyphens.
 
 ## Requirements
