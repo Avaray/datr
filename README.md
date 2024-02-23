@@ -6,9 +6,10 @@ It might be useful for console logging, generating IDs, naming files, etc.
 ## The Idea
 
 Let's treat the **Date** as a **number**. It's all about increasing that **number**.  
-[Unix time](https://en.wikipedia.org/wiki/Unix_time) does that, but it's not human-readable, and it doesn't include milliseconds.  
-To avoid these problems, let's start with [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg) date format and include the time, with milliseconds as the smallest unit. The end result is the format **YYYYMMDDHHMMSSms**.  
-There are many users of such a format. However, the format itself has never been standardized.
+[Unix time](https://en.wikipedia.org/wiki/Unix_time) does that, but it's not human-readable.  
+The solution is to start with [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg), add hours to it, and include milliseconds as the smallest unit.  
+The end result is the format **YYYYMMDDHHMMSSms**.  
+Many people use such a format. However, it has never been standardized.
 
 ## DATR takes two arguments
 
