@@ -1,12 +1,13 @@
 {
   "name": "datr",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "Generates a date in a programmer-friendly format",
   "author": "Avaray",
   "main": "module.mjs",
   "bin": {
     "datr": "cli.mjs"
   },
+  "types": "module.d.ts",
   "keywords": [
     "date",
     "day",
