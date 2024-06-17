@@ -43,7 +43,7 @@ pnpm add datr
 By using [BUN](https://bun.sh/docs/cli/add)
 
 ```bash
-bun add datr
+bun i datr
 ```
 
 ## [Module](https://nodejs.org/api/esm.html#introduction) Usage
@@ -87,7 +87,7 @@ pnpm add -g datr
 By using [BUN](https://bun.sh/docs/cli/add#global)
 
 ```bash
-bun add -g datr
+bun i -g datr
 ```
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage
