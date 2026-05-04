@@ -17,12 +17,10 @@ export default function (precision = 0, separator = '') {
 
   switch (parseInt(precision)) {
     case 1:
-      return `${year}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}`;
+      return `${year.toString().padStart(4, '0')}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}`;
     case 2:
-      return `${year}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}${separator}${z(
-        milliseconds,
-      ).padStart(3, '0')}`;
+      return `${year.toString().padStart(4, '0')}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}${separator}${milliseconds.toString().padStart(3, '0')}`;
     default:
-      return `${year}${z(month)}${z(day)}`;
+      return `${year.toString().padStart(4, '0')}${z(month)}${z(day)}`;
   }
 }

@@ -1,13 +1,14 @@
 {
-  "name": "datr",
-  "version": "3.0.6",
-  "description": "Generates a date in a programmer-friendly format",
   "author": "Avaray",
-  "main": "module.mjs",
   "bin": {
     "datr": "cli.mjs"
   },
-  "types": "module.d.ts",
+  "description": "Generates a date in a programmer-friendly format",
+  "engines": {
+    "node": ">=14.16.0"
+  },
+  "engineStrict": true,
+  "homepage": "https://github.com/Avaray/datr",
   "keywords": [
     "date",
     "day",
@@ -35,10 +36,9 @@
     "year",
     "years"
   ],
-  "homepage": "https://github.com/Avaray/datr",
   "license": "MIT",
-  "engines": {
-    "node": ">=8.2.1"
-  },
-  "engineStrict": true
+  "main": "module.mjs",
+  "name": "datr",
+  "types": "module.d.ts",
+  "version": "3.0.7"
 }
