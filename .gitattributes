@@ -1,2 +1,8 @@
 * text=auto eol=lf
-cli.mjs text eol=lf
+*.mjs text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+.gitignore text eol=lf
+LICENSE text eol=lf
