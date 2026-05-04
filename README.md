@@ -46,6 +46,12 @@ By using [BUN](https://bun.sh/docs/cli/add)
 bun i datr
 ```
 
+[DENO](https://docs.deno.com/runtime/reference/cli/add/)
+
+```bash
+deno add npm:datr
+```
+
 ## [Module](https://nodejs.org/api/esm.html#introduction) Usage
 
 ```js
@@ -62,9 +68,6 @@ console.log(datr(1));
 
 console.log(datr(2));
 // 20221230183500001
-
-console.log(datr(2, '.'));
-// 20221230.183500.001
 
 console.log(datr(2, '-'));
 // 20221230-183500-001
@@ -90,6 +93,12 @@ By using [BUN](https://bun.sh/docs/cli/add#global)
 bun i -g datr
 ```
 
+By using [DENO](https://docs.deno.com/runtime/reference/cli/run/)
+
+```bash
+deno i -g datr
+```
+
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage
 
 ```bash
@@ -101,9 +110,6 @@ datr 1
 
 datr 2
 # 20221230183500001
-
-datr 2 .
-# 20221230.183500.001
 
 datr 2 -
 # 20221230-183500-001
@@ -127,4 +133,10 @@ By using [BUN](https://bun.sh/docs/cli/bunx)
 
 ```bash
 bunx datr
+```
+
+[DENO](https://docs.deno.com/runtime/reference/cli/run/)
+
+```bash
+deno run --allow-net npm:datr
 ```
