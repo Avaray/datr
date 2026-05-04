@@ -28,19 +28,19 @@ In examples below you can see dots and hyphens.
 
 ## [Module](https://nodejs.org/api/esm.html#introduction) Installation
 
-By using [NPM](https://docs.npmjs.com/cli-documentation/install)
+[NPM](https://docs.npmjs.com/cli-documentation/install)
 
 ```bash
 npm i datr
 ```
 
-By using [PNPM](https://pnpm.io/cli/add)
+[PNPM](https://pnpm.io/cli/add)
 
 ```bash
 pnpm add datr
 ```
 
-By using [BUN](https://bun.sh/docs/cli/add)
+[BUN](https://bun.sh/docs/cli/add)
 
 ```bash
 bun i datr
@@ -75,25 +75,25 @@ console.log(datr(2, '-'));
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) installation
 
-By using [NPM](https://docs.npmjs.com/cli/v10/commands/npm-install#global)
+[NPM](https://docs.npmjs.com/cli/v10/commands/npm-install#global)
 
 ```bash
 npm i -g datr
 ```
 
-By using [PNPM](https://pnpm.io/cli/add#--global--g)
+[PNPM](https://pnpm.io/cli/add#--global--g)
 
 ```bash
 pnpm add -g datr
 ```
 
-By using [BUN](https://bun.sh/docs/cli/add#global)
+[BUN](https://bun.sh/docs/cli/add#global)
 
 ```bash
 bun i -g datr
 ```
 
-By using [DENO](https://docs.deno.com/runtime/reference/cli/run/)
+[DENO](https://docs.deno.com/runtime/reference/cli/run/)
 
 ```bash
 deno i -g datr
@@ -117,19 +117,19 @@ datr 2 -
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
 
-By using [NPM](https://docs.npmjs.com/cli/v10/commands/npx)
+[NPM](https://docs.npmjs.com/cli/v10/commands/npx)
 
 ```bash
 npx datr
 ```
 
-By using [PNPM](https://pnpm.io/cli/dlx)
+[PNPM](https://pnpm.io/cli/dlx)
 
 ```bash
 pnpm dlx datr
 ```
 
-By using [BUN](https://bun.sh/docs/cli/bunx)
+[BUN](https://bun.sh/docs/cli/bunx)
 
 ```bash
 bunx datr
