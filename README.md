@@ -1,15 +1,10 @@
 # 🕘 DATR
 
-This package will help you generate a date in a programmer-friendly format.  
-It might be useful for console logging, generating IDs, naming files, etc.
+Dates should be sortable and human-readable at the same time.
+[Unix timestamps](https://en.wikipedia.org/wiki/Unix_time) are sortable but unreadable.
+Most [date strings](https://en.wikipedia.org/wiki/Date_format_by_country) are readable but not sortable. **YYYYMMDDHHMMSSms** is both - common among developers, yet never formally standardized.
 
-## The Idea
-
-Let's treat the **Date** as a **number**. It's all about increasing that **number**.  
-[Unix time](https://en.wikipedia.org/wiki/Unix_time) does that, but it's not human-readable.  
-The solution is to start with [YMD](https://en.wikipedia.org/wiki/Date_format_by_country#/media/File:Date_format_by_country_3.svg), add hours to it, and include milliseconds as the smallest unit.  
-The end result is the format **YYYYMMDDHHMMSSms**.  
-Many people use such a format. However, it has never been standardized.
+Useful for console logging, generating IDs, naming files, and more.
 
 ## [Module](https://nodejs.org/api/esm.html#introduction) Installation
 
@@ -46,13 +41,13 @@ console.log(typeof datr());
 // string
 
 console.log(datr());
-// 20240615
+// 20260508
 
 console.log(datr({ precision: 'seconds' }));
-// 20240615183500
+// 20260508104700
 
 console.log(datr({ precision: 'ms', separator: '-' }));
-// 20240615-183500-001
+// 20260508-104700-001
 
 console.log(datr({ date: '2024-06-15', precision: 'seconds' }));
 // 20240615000000
@@ -99,13 +94,13 @@ deno i -g datr
 
 ```bash
 datr
-# 20240615
+# 20260508
 
 datr --precision seconds
-# 20240615183500
+# 20260508104700
 
 datr --precision ms --separator -
-# 20240615-183500-001
+# 20260508-104700-001
 
 datr --date 2024-06-15 --precision seconds
 # 20240615000000
@@ -121,7 +116,7 @@ All options also support short flags: `-p`, `-s`, `-d`, `-v`, and `-h`.
 
 ```bash
 datr -d "$(date)" -p ms -s -
-# 20240311-093008-222
+# 20260508-104700-222
 ```
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
