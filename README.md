@@ -42,8 +42,12 @@ deno add npm:datr
 ```js
 import datr from 'datr';
 
+console.log(typeof datr());
+// string
+
 console.log(datr());
 // 20240615
+
 
 console.log(datr({ precision: 'seconds' }));
 // 20240615183500
