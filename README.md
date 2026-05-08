@@ -69,11 +69,30 @@ The `datr` function accepts an optional options object:
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) installation
 
-[NPM](https://docs.npmjs.com/cli/v10/commands/npm-install#global)
+[NPM](https://docs.npmjs.com/cli-v10/commands/npm-install#global)
 
 ```bash
 npm i -g datr
 ```
+
+[PNPM](https://pnpm.io/cli/add#--global--g)
+
+```bash
+pnpm add -g datr
+```
+
+[BUN](https://bun.sh/docs/cli/add#global)
+
+```bash
+bun i -g datr
+```
+
+[DENO](https://docs.deno.com/runtime/reference/cli/run/)
+
+```bash
+deno i -g datr
+```
+
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage
 
@@ -89,11 +108,17 @@ datr --precision ms --separator -
 
 datr --date 2024-06-15 --precision seconds
 # 20240615000000
+
+datr --version
+# 4.0.0
+
+datr --help
+# Usage: datr [options] ...
 ```
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
 
-[NPM](https://docs.npmjs.com/cli/v10/commands/npx)
+[NPM](https://docs.npmjs.com/cli-v10/commands/npx)
 
 ```bash
 npx datr

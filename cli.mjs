@@ -2,10 +2,9 @@
 ':' //; command -v node >/dev/null 2>&1 && exec node "$0" "$@"; command -v bun >/dev/null 2>&1 && exec bun "$0" "$@"; command -v deno >/dev/null 2>&1 && exec deno run "$0" "$@"; echo "Error: Please install node, bun, or deno" >&2; exit 1
 
 import datr from './module.mjs';
-import { createRequire } from 'module';
 
-const require = createRequire(import.meta.url);
-const { version } = require('./package.json');
+const version = '4.0.0';
+
 
 const args = typeof Deno !== 'undefined' ? Deno.args : process.argv.slice(2);
 
@@ -23,7 +22,9 @@ Examples:
   datr
   datr --precision seconds
   datr --precision ms --separator -
-  datr --date 2024-06-15 --precision seconds`);
+  datr --date 2024-06-15 --precision seconds
+  datr --version
+  datr --help`);
 };
 
 if (args.includes('--help') || args.includes('-h')) {
@@ -43,13 +44,8 @@ for (let i = 0; i < args.length; i++) {
   else if (args[i] === '--date') options.date = args[++i];
 }
 
-// Support positional args for backward compatibility if no flags are used
-if (Object.keys(options).length === 0 && args.length > 0) {
-  if (args[0] && !args[0].startsWith('-')) options.precision = args[0];
-  if (args[1] && !args[1].startsWith('-')) options.separator = args[1];
-}
-
 try {
+
   console.log(datr(options));
 } catch (err) {
   console.error(err.message);

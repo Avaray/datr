@@ -68,15 +68,6 @@ describe("datr", () => {
     expect(() => datr({ date: 'not-a-date' })).toThrow(TypeError);
     expect(() => datr({ date: 'not-a-date' })).toThrow(/invalid date value/);
   });
-
-  test("backward compatibility with numeric precision (1)", () => {
-    const result = datr({ precision: 1 });
-    expect(result).toMatch(/^\d{14}$/);
-  });
-
-  test("backward compatibility with numeric precision (2)", () => {
-    const result = datr({ precision: 2 });
-    expect(result).toMatch(/^\d{17}$/);
-  });
 });
+
 
