@@ -34,10 +34,11 @@ try {
 
 console.log(`📦 Running "npm publish" for v${version}...`);
 try {
-    // Run npm publish in the root directory
-    execSync('npm publish', { stdio: 'inherit', cwd: root });
+    // Run npm publish in the root directory with --ignore-scripts to avoid loops
+    execSync('npm publish --ignore-scripts', { stdio: 'inherit', cwd: root });
     console.log(`\n🎉 Successfully published datr v${version} to npm!`);
 } catch (error) {
+
     console.error('\n❌ Failed to publish package. Check your npm permissions or version availability.');
     process.exit(1);
 }

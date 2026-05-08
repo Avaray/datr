@@ -63,9 +63,10 @@
   "main": "module.mjs",
   "name": "datr",
   "scripts": {
-    "publish": "bun run scripts/publish.mjs",
+    "ship": "bun run scripts/publish.mjs",
     "test": "bun test"
   },
+
   "type": "module",
   "types": "module.d.ts",
   "version": "4.0.0"
