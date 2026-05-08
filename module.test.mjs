@@ -50,7 +50,18 @@ describe("datr", () => {
     expect(result).toContain('20240615');
   });
 
+  test("date as timestamp 0 returns Unix epoch", () => {
+    const result = datr({ date: 0 });
+    expect(result).toContain('19700101');
+  });
+
+  test("date as negative timestamp works", () => {
+    const result = datr({ date: -86400000 }); // 1969-12-31
+    expect(result).toContain('19691231');
+  });
+
   test("all options combined works", () => {
+
     const result = datr({ 
       date: new Date(2024, 5, 15, 12, 34, 56, 789), 
       precision: 'ms', 

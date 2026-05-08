@@ -1,9 +1,13 @@
 import { expect, test, describe } from "bun:test";
+import pkg from "./package.json" with { type: "json" };
+
+const { version } = pkg;
 
 /**
  * Helper to run the CLI and capture its output.
  */
 const runCli = async (args) => {
+
   const proc = Bun.spawn(["bun", "run", "cli.mjs", ...args], {
     stdout: "pipe",
     stderr: "pipe",
@@ -48,16 +52,23 @@ describe("CLI", () => {
   test("--version returns current version", async () => {
     const { stdout, status } = await runCli(["--version"]);
     expect(status).toBe(0);
-    expect(stdout.trim()).toBe("4.0.0");
+    expect(stdout.trim()).toBe(version);
   });
 
   test("-v returns current version", async () => {
     const { stdout, status } = await runCli(["-v"]);
     expect(status).toBe(0);
-    expect(stdout.trim()).toBe("4.0.0");
+    expect(stdout.trim()).toBe(version);
+  });
+
+  test("missing flag value falls back gracefully", async () => {
+    const { stdout, status } = await runCli(["--precision"]);
+    expect(status).toBe(0);
+    expect(stdout.trim()).toMatch(/^\d{8}$/);
   });
 
   test("--help returns usage instructions", async () => {
+
     const { stdout, status } = await runCli(["--help"]);
     expect(status).toBe(0);
     expect(stdout).toContain("Usage: datr [options]");
