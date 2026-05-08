@@ -5,7 +5,6 @@ import datr from './module.mjs';
 
 const version = '4.0.0';
 
-
 const args = typeof Deno !== 'undefined' ? Deno.args : process.argv.slice(2);
 
 const printHelp = () => {
