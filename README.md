@@ -48,7 +48,6 @@ console.log(typeof datr());
 console.log(datr());
 // 20240615
 
-
 console.log(datr({ precision: 'seconds' }));
 // 20240615183500
 
@@ -68,8 +67,6 @@ The `datr` function accepts an optional options object:
 | `precision` | `'day' \| 'seconds' \| 'ms'` | `'day'` | Smallest unit in the output. |
 | `separator` | `string` | `''` | String inserted between blocks. |
 | `date` | `Date \| string \| number` | `new Date()` | Date to format (Date object, ISO string, or timestamp). |
-
-*Note: If an unknown precision value is passed, it falls back to `'day'`.*
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) installation
 
@@ -120,9 +117,11 @@ datr --help
 # Usage: datr [options] ...
 ```
 
-*Note: All options also support short flags: `-p`, `-s`, `-d`, `-v`, and `-h`.*
+All options also support short flags: `-p`, `-s`, `-d`, `-v`, and `-h`.
 
-
+```bash
+datr -d "$(date)" -p ms -s -
+# 20240311-093008-222
 ```
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
@@ -160,4 +159,4 @@ The API has changed from positional arguments to a single options object.
 | `datr()` | `datr()` |
 | `datr(1)` | `datr({ precision: 'seconds' })` |
 | `datr(2)` | `datr({ precision: 'ms' })` |
-| `datr(2, '-')` | `datr({ precision: 'ms', separator: '-' })` |
+| `datr(2, '-')` | `datr({ precision: 'ms', separator: '-' })` |

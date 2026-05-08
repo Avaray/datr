@@ -21,9 +21,7 @@ Examples:
   datr
   datr -p seconds
   datr -p ms -s -
-  datr -d 2024-06-15 -p seconds
-  datr --version
-  datr --help`);
+  datr --date 2024-06-15 -precision seconds`);
 };
 
 if (args.includes('--help') || args.includes('-h')) {
