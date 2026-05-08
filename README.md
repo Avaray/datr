@@ -100,20 +100,21 @@ deno i -g datr
 datr
 # 20240615
 
-datr --precision seconds
+datr -p seconds
 # 20240615183500
 
-datr --precision ms --separator -
+datr -p ms -s -
 # 20240615-183500-001
 
-datr --date 2024-06-15 --precision seconds
+datr -d 2024-06-15 -p seconds
 # 20240615000000
 
-datr --version
+datr -v
 # 4.0.0
 
-datr --help
+datr -h
 # Usage: datr [options] ...
+
 ```
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation

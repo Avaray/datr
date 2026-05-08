@@ -11,17 +11,17 @@ const printHelp = () => {
   console.log(`Usage: datr [options]
 
 Options:
-  --precision  day | seconds | ms   (default: day)
-  --separator  <string>             (default: none)
-  --date       ISO string | timestamp
-  --version    Show version
-  --help       Show help
+  -p, --precision  day | seconds | ms   (default: day)
+  -s, --separator  <string>             (default: none)
+  -d, --date       ISO string | timestamp
+  -v, --version    Show version
+  -h, --help       Show help
 
 Examples:
   datr
-  datr --precision seconds
-  datr --precision ms --separator -
-  datr --date 2024-06-15 --precision seconds
+  datr -p seconds
+  datr -p ms -s -
+  datr -d 2024-06-15 -p seconds
   datr --version
   datr --help`);
 };
@@ -38,10 +38,12 @@ if (args.includes('--version') || args.includes('-v')) {
 
 const options = {};
 for (let i = 0; i < args.length; i++) {
-  if (args[i] === '--precision') options.precision = args[++i];
-  else if (args[i] === '--separator') options.separator = args[++i];
-  else if (args[i] === '--date') options.date = args[++i];
+  const arg = args[i];
+  if (arg === '--precision' || arg === '-p') options.precision = args[++i];
+  else if (arg === '--separator' || arg === '-s') options.separator = args[++i];
+  else if (arg === '--date' || arg === '-d') options.date = args[++i];
 }
+
 
 try {
 
