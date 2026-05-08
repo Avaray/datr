@@ -100,20 +100,24 @@ deno i -g datr
 datr
 # 20240615
 
-datr -p seconds
+datr --precision seconds
 # 20240615183500
 
-datr -p ms -s -
+datr --precision ms --separator -
 # 20240615-183500-001
 
-datr -d 2024-06-15 -p seconds
+datr --date 2024-06-15 --precision seconds
 # 20240615000000
 
-datr -v
+datr --version
 # 4.0.0
 
-datr -h
+datr --help
 # Usage: datr [options] ...
+```
+
+*Note: All options also support short flags: `-p`, `-s`, `-d`, `-v`, and `-h`.*
+
 
 ```
 
