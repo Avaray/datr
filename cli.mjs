@@ -2,11 +2,57 @@
 ':' //; command -v node >/dev/null 2>&1 && exec node "$0" "$@"; command -v bun >/dev/null 2>&1 && exec bun "$0" "$@"; command -v deno >/dev/null 2>&1 && exec deno run "$0" "$@"; echo "Error: Please install node, bun, or deno" >&2; exit 1
 
 import datr from './module.mjs';
+import { createRequire } from 'module';
 
-// Cross-runtime argument resolution: Deno uses Deno.args, Node/Bun use process.argv
-const args =
-  typeof Deno !== 'undefined'
-    ? Deno.args
-    : process.argv.slice(2);
+const require = createRequire(import.meta.url);
+const { version } = require('./package.json');
 
-console.log(datr(args[0], args[1]));
+const args = typeof Deno !== 'undefined' ? Deno.args : process.argv.slice(2);
+
+const printHelp = () => {
+  console.log(`Usage: datr [options]
+
+Options:
+  --precision  day | seconds | ms   (default: day)
+  --separator  <string>             (default: none)
+  --date       ISO string | timestamp
+  --version    Show version
+  --help       Show help
+
+Examples:
+  datr
+  datr --precision seconds
+  datr --precision ms --separator -
+  datr --date 2024-06-15 --precision seconds`);
+};
+
+if (args.includes('--help') || args.includes('-h')) {
+  printHelp();
+  typeof process !== 'undefined' ? process.exit(0) : Deno.exit(0);
+}
+
+if (args.includes('--version') || args.includes('-v')) {
+  console.log(version);
+  typeof process !== 'undefined' ? process.exit(0) : Deno.exit(0);
+}
+
+const options = {};
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--precision') options.precision = args[++i];
+  else if (args[i] === '--separator') options.separator = args[++i];
+  else if (args[i] === '--date') options.date = args[++i];
+}
+
+// Support positional args for backward compatibility if no flags are used
+if (Object.keys(options).length === 0 && args.length > 0) {
+  if (args[0] && !args[0].startsWith('-')) options.precision = args[0];
+  if (args[1] && !args[1].startsWith('-')) options.separator = args[1];
+}
+
+try {
+  console.log(datr(options));
+} catch (err) {
+  console.error(err.message);
+  typeof process !== 'undefined' ? process.exit(1) : Deno.exit(1);
+}
+

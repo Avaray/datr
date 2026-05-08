@@ -1,26 +1,32 @@
-export default function (precision = 0, separator = '') {
-  function z(n) {
-    return n.toString().padStart(2, '0');
-  }
+function z(n) {
+  return n.toString().padStart(2, '0');
+}
 
-  const date = new Date();
+export default function datr({ precision = 'day', separator = '', date } = {}) {
+  const d = date ? new Date(date) : new Date();
+  if (isNaN(d.getTime())) throw new TypeError(`datr: invalid date value "${date}"`);
 
   const [year, month, day, hours, minutes, seconds, milliseconds] = [
-    date.getFullYear(),
-    date.getMonth() + 1,
-    date.getDate(),
-    date.getHours(),
-    date.getMinutes(),
-    date.getSeconds(),
-    date.getMilliseconds(),
+    d.getFullYear(),
+    d.getMonth() + 1,
+    d.getDate(),
+    d.getHours(),
+    d.getMinutes(),
+    d.getSeconds(),
+    d.getMilliseconds(),
   ];
 
-  switch (parseInt(precision)) {
+  const ymd = `${year.toString().padStart(4, '0')}${z(month)}${z(day)}`;
+
+  switch (precision) {
     case 1:
-      return `${year.toString().padStart(4, '0')}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}`;
+    case 'seconds':
+      return `${ymd}${separator}${z(hours)}${z(minutes)}${z(seconds)}`;
     case 2:
-      return `${year.toString().padStart(4, '0')}${z(month)}${z(day)}${separator}${z(hours)}${z(minutes)}${z(seconds)}${separator}${milliseconds.toString().padStart(3, '0')}`;
+    case 'ms':
+      return `${ymd}${separator}${z(hours)}${z(minutes)}${z(seconds)}${separator}${milliseconds.toString().padStart(3, '0')}`;
     default:
-      return `${year.toString().padStart(4, '0')}${z(month)}${z(day)}`;
+      return ymd;
   }
 }
+

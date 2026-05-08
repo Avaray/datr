@@ -11,21 +11,6 @@ The solution is to start with [YMD](https://en.wikipedia.org/wiki/Date_format_by
 The end result is the format **YYYYMMDDHHMMSSms**.  
 Many people use such a format. However, it has never been standardized.
 
-## DATR takes two arguments
-
-### First, optional argument is `precision`
-
-The argument sets the precision we want to see in output.
-
-`0` - Year, Month, Day (default)  
-`1` - Year, Month, Day, Hour, Minute, Second  
-`2` - Year, Month, Day, Hour, Minute, Second, Millisecond
-
-### Second, optional argument is `separator`
-
-You can pass a string separator to separate **blocks** and make the output more readable.  
-In examples below you can see dots and hyphens.
-
 ## [Module](https://nodejs.org/api/esm.html#introduction) Installation
 
 [NPM](https://docs.npmjs.com/cli-documentation/install)
@@ -57,21 +42,30 @@ deno add npm:datr
 ```js
 import datr from 'datr';
 
-console.log(typeof datr());
-// string
-
 console.log(datr());
-// 20221230
+// 20240615
 
-console.log(datr(1));
-// 20221230183500
+console.log(datr({ precision: 'seconds' }));
+// 20240615183500
 
-console.log(datr(2));
-// 20221230183500001
+console.log(datr({ precision: 'ms', separator: '-' }));
+// 20240615-183500-001
 
-console.log(datr(2, '-'));
-// 20221230-183500-001
+console.log(datr({ date: '2024-06-15', precision: 'seconds' }));
+// 20240615000000
 ```
+
+### Options
+
+The `datr` function accepts an optional options object:
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `precision` | `'day' \| 'seconds' \| 'ms'` | `'day'` | Smallest unit in the output. |
+| `separator` | `string` | `''` | String inserted between blocks. |
+| `date` | `Date \| string \| number` | `new Date()` | Date to format (Date object, ISO string, or timestamp). |
+
+*Note: If an unknown precision value is passed, it falls back to `'day'`.*
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) installation
 
@@ -81,38 +75,20 @@ console.log(datr(2, '-'));
 npm i -g datr
 ```
 
-[PNPM](https://pnpm.io/cli/add#--global--g)
-
-```bash
-pnpm add -g datr
-```
-
-[BUN](https://bun.sh/docs/cli/add#global)
-
-```bash
-bun i -g datr
-```
-
-[DENO](https://docs.deno.com/runtime/reference/cli/run/)
-
-```bash
-deno i -g datr
-```
-
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage
 
 ```bash
 datr
-# 20221230
+# 20240615
 
-datr 1
-# 20221230183500
+datr --precision seconds
+# 20240615183500
 
-datr 2
-# 20221230183500001
+datr --precision ms --separator -
+# 20240615-183500-001
 
-datr 2 -
-# 20221230-183500-001
+datr --date 2024-06-15 --precision seconds
+# 20240615000000
 ```
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
@@ -138,5 +114,16 @@ bunx datr
 [DENO](https://docs.deno.com/runtime/reference/cli/run/)
 
 ```bash
-deno run --allow-net npm:datr
+deno run npm:datr
 ```
+
+## Migrating from v3
+
+The API has changed from positional arguments to a single options object.
+
+| v3 (Positional) | v4 (Object) |
+|---|---|
+| `datr()` | `datr()` |
+| `datr(1)` | `datr({ precision: 'seconds' })` |
+| `datr(2)` | `datr({ precision: 'ms' })` |
+| `datr(2, '-')` | `datr({ precision: 'ms', separator: '-' })` |
