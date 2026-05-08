@@ -3,7 +3,7 @@
   "bin": {
     "datr": "cli.mjs"
   },
-  "description": "Generates a date in a programmer-friendly format",
+  "description": "Dependency-free utility for generating YYYYMMDDHHMMSS timestamps. Perfect for logs, file naming, and automated workflows.",
   "engines": {
     "node": ">=14.16.0"
   },
@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/Avaray/datr/issues"
   },
-
   "files": [
     "cli.mjs",
     "module.d.ts",
