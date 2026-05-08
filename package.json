@@ -1,31 +1,33 @@
 {
-  "name": "datr",
-  "version": "4.0.0",
-  "description": "Generates a date in a programmer-friendly format",
-  "type": "module",
-  "main": "module.mjs",
-  "types": "module.d.ts",
+  "author": "Avaray",
   "bin": {
     "datr": "cli.mjs"
   },
-  "exports": {
-    ".": {
-      "types": "./module.d.ts",
-      "import": "./module.mjs"
-    }
-  },
-  "files": [
-    "module.mjs",
-    "cli.mjs",
-    "module.d.ts"
-  ],
-  "scripts": {
-    "test": "bun test",
-    "publish": "bun run scripts/publish.mjs"
-  },
+  "description": "Generates a date in a programmer-friendly format",
   "engines": {
     "node": ">=14.16.0"
   },
+  "exports": {
+    ".": {
+      "import": "./module.mjs",
+      "types": "./module.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avaray/datr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Avaray/datr/issues"
+  },
+
+  "files": [
+    "cli.mjs",
+    "module.d.ts",
+    "module.mjs"
+  ],
+  "homepage": "https://github.com/Avaray/datr",
   "keywords": [
     "date",
     "day",
@@ -53,7 +55,14 @@
     "year",
     "years"
   ],
-  "author": "Avaray",
   "license": "MIT",
-  "homepage": "https://github.com/Avaray/datr"
-}
+  "main": "module.mjs",
+  "name": "datr",
+  "scripts": {
+    "publish": "bun run scripts/publish.mjs",
+    "test": "bun test"
+  },
+  "type": "module",
+  "types": "module.d.ts",
+  "version": "4.0.0"
+}
