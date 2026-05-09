@@ -37,20 +37,20 @@ deno add npm:datr
 ```js
 import datr from 'datr';
 
-console.log(typeof datr());
+typeof datr();
 // string
 
-console.log(datr());
+datr();
 // 20260508
 
-console.log(datr({ precision: 'seconds' }));
+datr({ precision: 'seconds' });
 // 20260508104700
 
-console.log(datr({ precision: 'ms', separator: '-' }));
+datr({ precision: 'ms', separator: '-' });
 // 20260508-104700-001
 
-console.log(datr({ date: '2024-06-15', precision: 'seconds' }));
-// 20240615000000
+datr({ date: '2026-05-08', precision: 'seconds' });
+// 20260508000000
 ```
 
 ### Options
@@ -102,8 +102,8 @@ datr --precision seconds
 datr --precision ms --separator -
 # 20260508-104700-001
 
-datr --date 2024-06-15 --precision seconds
-# 20240615000000
+datr --date 2026-05-08 --precision seconds
+# 20260508000000
 
 datr --version
 # 4.0.0
@@ -121,16 +121,16 @@ datr -d "$(date)" -p ms -s -
 
 ## [CLI](https://en.wikipedia.org/wiki/Command-line_interface) usage without installation
 
-[NPM](https://docs.npmjs.com/cli-v10/commands/npx)
+[NPM](https://docs.npmjs.com/cli/v11/commands/npx)
 
 ```bash
 npx datr
 ```
 
-[PNPM](https://pnpm.io/cli/dlx)
+[PNPM](https://pnpm.io/cli/pnx)
 
 ```bash
-pnpm dlx datr
+pnx datr
 ```
 
 [BUN](https://bun.sh/docs/cli/bunx)
